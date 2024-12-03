@@ -2,7 +2,7 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     -- Conform will run multiple formatters sequentially
-    python = { "isort", "black" },
+    python = { "isort", "black", stop_after_first = true},
     -- Conform will run the first available formatter
     cpp = {"clang-format"},
     c = {"clang-format"},
@@ -35,6 +35,7 @@ local options = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
     lsp_fallback = true,
+    lsp_format = "fallback",
   },
 }
 

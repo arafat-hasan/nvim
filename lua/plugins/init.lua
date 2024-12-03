@@ -1,8 +1,19 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = { "BufWritePre" },
     opts = require "configs.conform",
+    keys = {
+      {
+        -- Customize or remove this keymap to your liking
+        "<leader>f",
+        function()
+          require("conform").format({ async = true })
+        end,
+        mode = "",
+        desc = "Format buffer",
+      },
+    },
   },
 
   -- These are some examples, uncomment them if you want to see them work!
@@ -68,25 +79,103 @@ return {
     },
   },
 
+  -- {
+  --   "kawre/leetcode.nvim",
+  --   build = ":TSUpdate html",
+  --   cmd = "Leet",
+  --   dependencies = {
+  --       "nvim-telescope/telescope.nvim",
+  --       "nvim-lua/plenary.nvim", -- required by telescope
+  --       "MunifTanjim/nui.nvim",
+
+  --       -- optional
+  --       "nvim-treesitter/nvim-treesitter",
+  --       "rcarriga/nvim-notify",
+  --       "nvim-tree/nvim-web-devicons",
+  --   },
+  --   opts = {
+  --       -- configuration goes here
+  --   },
+  -- },
+
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   event = "VeryLazy",
+  --   dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
+  --   config = function()
+  --     local dap = require("dap")
+  --     local dapui = require("dapui")
+  --     dapui.setup()
+  --     dap.listeners.after.event_initialized["dapui_config"] = function()
+  --       dapui.open()
+  --     end
+  --     dap.listeners.before.event_terminated["dapui_config"] = function()
+  --       dapui.close()
+  --     end
+  --     dap.listeners.before.event_exited["dapui_config"] = function()
+  --       dapui.close()
+  --     end
+  --   end
+  -- },
+  -- {
+  --   "jay-babu/mason-nvim-dap.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "williamboman/mason.nvim",
+  --     "mfussenegger/nvim-dap",
+  --   },
+  --   opts = {
+  --     handlers = {}
+  --   },
+  -- },
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   config = function()
+  --     local dap = require('dap')
+  --     dap.adapters.cppdbg = {
+  --       id = 'cppdbg',
+  --       type = 'executable',
+  --       command = '/usr/bin/OpenDebugAD7',
+  --     }
+
+  --     dap.configurations.cpp = {
+  --       {
+  --         name = "Launch file",
+  --         type = "cppdbg",
+  --         request = "launch",
+  --         program = function()
+  --           return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+  --         end,
+  --         cwd = '${workspaceFolder}',
+  --         stopAtEntry = true,
+  --       },
+  --       {
+  --         name = 'Attach to gdbserver :1234',
+  --         type = 'cppdbg',
+  --         request = 'launch',
+  --         MIMode = 'gdb',
+  --         miDebuggerServerAddress = 'localhost:1234',
+  --         miDebuggerPath = '/usr/bin/gdb',
+  --         cwd = '${workspaceFolder}',
+  --         program = function()
+  --           return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+  --         end,
+  --       },
+  --     }
+  --     dap.configurations.c = dap.configurations.cpp
+  --     dap.configurations.rust = dap.configurations.cpp
+  --   end,
+  -- },
+
   {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html",
-    cmd = "Leet",
-    dependencies = {
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim", -- required by telescope
-        "MunifTanjim/nui.nvim",
-
-        -- optional
-        "nvim-treesitter/nvim-treesitter",
-        "rcarriga/nvim-notify",
-        "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
-        -- configuration goes here
-    },
+    'xeluxee/competitest.nvim',
+    dependencies = {"MunifTanjim/nui.nvim"},
+    event = "VeryLazy",
+    config = function()
+      local competitest = require('competitest')
+      competitest.setup()
+    end,
   },
-
   -- {
   --   "nvimdev/guard.nvim",
 
