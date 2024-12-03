@@ -79,24 +79,25 @@ return {
     },
   },
 
-  -- {
-  --   "kawre/leetcode.nvim",
-  --   build = ":TSUpdate html",
-  --   cmd = "Leet",
-  --   dependencies = {
-  --       "nvim-telescope/telescope.nvim",
-  --       "nvim-lua/plenary.nvim", -- required by telescope
-  --       "MunifTanjim/nui.nvim",
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    event = "VeryLazy",
+    cmd = "Leet",
+    dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim", -- required by telescope
+        "MunifTanjim/nui.nvim",
 
-  --       -- optional
-  --       "nvim-treesitter/nvim-treesitter",
-  --       "rcarriga/nvim-notify",
-  --       "nvim-tree/nvim-web-devicons",
-  --   },
-  --   opts = {
-  --       -- configuration goes here
-  --   },
-  -- },
+        -- optional
+        "nvim-treesitter/nvim-treesitter",
+        "rcarriga/nvim-notify",
+        "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+        -- configuration goes here
+    },
+  },
 
   -- {
   --   "rcarriga/nvim-dap-ui",
