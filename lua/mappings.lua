@@ -16,5 +16,9 @@ map("n", "<leader>ce", "<cmd> CompetiTest edit_testcase <CR>", { desc = "Edit an
 map("n", "<leader>cr", "<cmd> CompetiTest run <CR>", { desc = "Compile and run all testcases"})
 map("n", "<leader>cnr", "<cmd> CompetiTest run_no_compile <CR>", { desc = "Run all testcases with previous compilation"})
 
+map("n", "<leader>crt", "<cmd> CompetiTest receive testcases <CR>", { desc = "Download only testcases"})
+map("n", "<leader>crp", "<cmd> CompetiTest receive problem <CR>", { desc = "Download a problem, testcases and create source file is automatically"})
+map("n", "<leader>crc", "<cmd> CompetiTest receive contest <CR>", { desc = "Download an entire contest, make sure to be on the homepage of the contest, not of a single problem"})
+
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

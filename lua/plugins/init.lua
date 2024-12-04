@@ -174,7 +174,14 @@ return {
     event = "VeryLazy",
     config = function()
       local competitest = require('competitest')
-      competitest.setup()
+      competitest.setup{
+        template_file = true,
+        evaluate_template_modifiers = true,
+        template_file = "$(HOME)/Work/github.com_md.arafathasanjenin@gmail.com/problem-solving/template/template.$(FEXT)",
+        received_problems_path = "$(CWD)/Contests/$(JUDGE)/$(CONTEST)/$(PROBLEM).$(FEXT)",
+        received_contests_directory = "$(CWD)/Contests/$(JUDGE)/$(CONTEST)",
+        received_contests_problems_path = "$(PROBLEM)/main.$(FEXT)",
+      }
     end,
   },
   -- {
