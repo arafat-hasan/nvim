@@ -93,9 +93,16 @@ return {
         "nvim-treesitter/nvim-treesitter",
         "rcarriga/nvim-notify",
         "nvim-tree/nvim-web-devicons",
+        -- "3rd/image.nvim",
     },
     opts = {
-        -- configuration goes here
+        ---@type lc.storage
+        storage = {
+            home = vim.fn.getcwd() .. "/leetcode",
+            cache = vim.fn.stdpath("cache") .. "/leetcode",
+        },
+        -- ---@type boolean
+        -- image_support = true,
     },
   },
 

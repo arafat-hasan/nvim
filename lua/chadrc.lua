@@ -5,7 +5,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "gruvbox_light",
+	theme = "penumbra_dark",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
