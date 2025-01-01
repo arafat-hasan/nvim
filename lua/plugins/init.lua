@@ -184,8 +184,8 @@ return {
       competitest.setup{
         template_file = true,
         evaluate_template_modifiers = true,
-        template_file = "$(HOME)/Work/github.com_md.arafathasanjenin@gmail.com/problem-solving/Library/skeleton.$(FEXT)",
-        received_problems_path = "$(CWD)/Contests/$(JUDGE)/$(CONTEST)/$(PROBLEM).$(FEXT)",
+        template_file = "$(HOME)/Work/github_personal/problem-solving/Library/skeleton.$(FEXT)",
+        received_problems_path = "$(CWD)/$(JUDGE)/$(CONTEST)/$(PROBLEM).$(FEXT)",
         received_contests_directory = "$(CWD)/Contests/$(JUDGE)/$(CONTEST)",
         received_contests_problems_path = "$(PROBLEM)/main.$(FEXT)",
       }
