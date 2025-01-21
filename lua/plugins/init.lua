@@ -203,6 +203,12 @@ return {
         received_problems_path = "$(CWD)/$(JUDGE)/$(CONTEST)/$(PROBLEM).$(FEXT)",
         received_contests_directory = "$(CWD)/Contests/$(JUDGE)/$(CONTEST)",
         received_contests_problems_path = "$(PROBLEM)/main.$(FEXT)",
+        compile_command = {
+          cpp = { exec = 'g++', args = {'$(FNAME)', '-o', '$(FNOEXT).out'} },
+        },
+        run_command = {
+          cpp = { exec = './$(FNOEXT).out' },
+        },
       }
     end,
   },
